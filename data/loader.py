@@ -1,5 +1,5 @@
-import pandas as pd
 import pickle
+import pandas as pd
 
 def load_correlation_dict(path='../data/outputs/corr_dict.pkl'):
     return pickle.load(open(path, 'rb'))
@@ -21,7 +21,8 @@ def load_monthly_with_unemployment(path='data/monthly_gas_econ.pkl'):
     return df
 
 def load_change_monthly_with_unemployment(path='data/monthly_gas_econ.pkl'):
-    df = pickle.load(open(path, 'rb'))
+    #df = pickle.load(open(path, 'rb'))
+    df = pd.read_pickle(path)
     df['unemployment_change'] = df['est_unemployment_pct'].diff()
     for g in ['co_api', 'no2_api', 'so2_api', 'pm2.5_api', 'aqi']:
         df[f'diff_{g}'] = df[g].pct_change()
