@@ -15,7 +15,8 @@ def india_map(corr_gas='aqi'):
     grp = dfm.groupby('city')[['aqi']].mean()
     grp['City'] = grp.index
     grouped = grp.reset_index(drop=True)
-    raw = pd.read_csv("../data/refs/in_coords.csv")
+    #raw = pd.read_csv("../data/in_coords.csv")
+    raw = pd.read_csv('./data/in_coords.csv')
     raw['City'] = raw['City'].replace({'Vijaywada':'Vijayawada', 'Pondicherry':'Puducherry'})
     df_coords = pd.merge(grouped, raw, how='left', on='City')
     
