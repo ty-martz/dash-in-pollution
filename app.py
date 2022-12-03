@@ -20,6 +20,7 @@ from components.covid import build_covid_graphic, add_covid_gas_filters, build_c
 
 app = Dash(__name__)
 app.config.suppress_callback_exceptions=True
+server = app.server
 
 covid_df = pickle.load(open('data/covid_grouped.pkl', 'rb'))
 
