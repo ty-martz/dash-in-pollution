@@ -2,6 +2,7 @@
 ---
 
 This Plotly Dash app is part of a project to better understand the effect of pollution in India.
+See Dashboard in action on Heroku: https://emissions-dash.herokuapp.com/
 
 ## Dashboard Usage
 
